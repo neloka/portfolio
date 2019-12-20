@@ -14,6 +14,11 @@
   <link href="/static/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="/static/css/style.css" rel="stylesheet">
+  <style>
+  /* nav{
+  box-shadow: none;
+} */
+  </style>
 </head>
 
 <body>
@@ -21,49 +26,7 @@
   <!-- Start your project here-->
  <header>
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
 
-  <div class="container">
-
-    <!-- Navbar brand -->
-    <a class="navbar-brand font-weight-bold white-text" href="#">Your brand name</a>
-
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-
-      <!-- Links -->
-      <ul class="navbar-nav ml-auto ">
-        <li class="nav-item active">
-          <a class="nav-link white-text" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link white-text" data-toggle="tab" href="#projects" role="tab">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link white-text" href="#social">Social Media</a>
-        </li>
-
-        <!-- Dropdown -->
-        
-
-      </ul>
-      <!-- Links -->
-
-     
-    </div>
-    <!-- Collapsible content -->
-
-  </div>
-
-</nav>
 <!--/.Navbar-->
 <div id="intro" class="view">
 
@@ -76,13 +39,13 @@
                 <div class="col-md-10">
 
                     <!-- Heading -->
-                    <h2 class="display-7 font-weight-bold white-text pt-5 mb-2">I'm Your name</h2>
+                    <h2 class="display-7 font-weight-bold white-text pt-5 mb-2" id="name-word"></h2>
 
                     <!-- Divider -->
                     <hr class="hr-light">
 
                     <!-- Description -->
-                    <h4 class="white-text my-3">What do you do?</h4>
+                    <h4 class="white-text my-3" id="move-word"></h4>
                     <a href="#projects"><button type="button" class="btn btn-outline-white">Projects<i class="fas fa-project-diagram ml-2"></i></button></a>
                     <a href="#contact"><button type="button" class="btn btn-outline-white">Contact Me<i class="fas fa-address-book ml-2"></i></button></a>
 
@@ -262,6 +225,27 @@
     <!--Footer Links-->
     </footer>
   <!-- SCRIPTS -->
+  <script>
+    var word = "I write backend code and hope it gets to production";
+    var word1 = "I'm Eloka Newton";
+    const sleep = (milliseconds) => {
+
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+
+        }
+
+    
+    async function testy(w,id){
+        for(var i =0;i <= w.length-1;i++){
+            var lett = w[i]
+            await sleep(100);
+            // console.log(lett)
+            document.getElementById(id).innerHTML += lett;
+        }
+    }
+    testy(word1,"name-word")
+    testy(word,"move-word")
+    </script>
   <!-- JQuery -->
   <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
   <!-- Bootstrap tooltips -->
